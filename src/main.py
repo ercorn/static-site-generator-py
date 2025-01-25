@@ -1,5 +1,8 @@
+from textnode import TextNode
+
 def main():
-    print("hello world")
+    dummy_textnode = TextNode("This is a text node", "bold", "https://www.boot.dev")
+    print(dummy_textnode)
 
 
 if __name__ == "__main__":
