@@ -3,6 +3,15 @@ from htmlnode import *
 from inline_markdown import *
 from block_markdown import *
 import re
+import os
+import shutil
+
+def copy_to_dest(source, dest):
+    if not os.path.exists(source):
+        raise ValueError("Source path does not exist")
+    if not os.path.exists(dest):
+        raise ValueError("Destination path does not exist")
+    return "output"
 
 def main():
     #dummy_textnode = TextNode("This is a text node", "bold", "https://www.boot.dev")
@@ -68,16 +77,17 @@ def main():
 #    block_text_split = markdown_to_blocks(block_text)
 #    print(block_text_split)
 
-    print(block_to_block_type("###### Heading Check"))
-    print(block_to_block_type("Testy"))
-    print(block_to_block_type("``` Test ```"))
-    print(block_to_block_type("``` Test ``"))
-    print(block_to_block_type(">Test\n>Test2"))
-    print(block_to_block_type(">Test\n>Test2\n-Test3"))
-    print(block_to_block_type("* Test\n- Test2"))
-    print(block_to_block_type("* Test\n- Test2\n*Test3"))
-    print(block_to_block_type("1. Test\n2. Test2"))
-    print(block_to_block_type("1. Test\n2. Test2\n4. Test3"))
+    #print(block_to_block_type("###### Heading Check"))
+    #print(block_to_block_type("Testy"))
+    #print(block_to_block_type("``` Test ```"))
+    #print(block_to_block_type("``` Test ``"))
+    #print(block_to_block_type(">Test\n>Test2"))
+    #print(block_to_block_type(">Test\n>Test2\n-Test3"))
+    #print(block_to_block_type("* Test\n- Test2"))
+    #print(block_to_block_type("* Test\n- Test2\n*Test3"))
+    #print(block_to_block_type("1. Test\n2. Test2"))
+    #print(block_to_block_type("1. Test\n2. Test2\n4. Test3"))
+    print(copy_to_dest(".", "src"))
 
 
 
