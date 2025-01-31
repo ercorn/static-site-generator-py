@@ -54,19 +54,33 @@ def main():
     #final_text = "This is **text** with an *italic* word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
     #split_textnodes = text_to_textnodes(final_text)
     #print(split_textnodes)
-    print("++++++++++++++++BLOCK MARKDOWN TEST++++++++++++++++++++++++")
-    block_text = """
-This is **bolded** paragraph
+    #print("++++++++++++++++BLOCK MARKDOWN TEST++++++++++++++++++++++++")
+    #block_text = """
+#This is **bolded** paragraph
+#
+#This is another paragraph with *italic* text and `code` here
+#This is the same paragraph on a new line
+#
+#* This is a list
+#* with items
+#"""
+#    print(block_text)
+#    block_text_split = markdown_to_blocks(block_text)
+#    print(block_text_split)
 
-This is another paragraph with *italic* text and `code` here
-This is the same paragraph on a new line
+    print(block_to_block_type("###### Heading Check"))
+    print(block_to_block_type("Testy"))
+    print(block_to_block_type("``` Test ```"))
+    print(block_to_block_type("``` Test ``"))
+    print(block_to_block_type(">Test\n>Test2"))
+    print(block_to_block_type(">Test\n>Test2\n-Test3"))
+    print(block_to_block_type("* Test\n- Test2"))
+    print(block_to_block_type("* Test\n- Test2\n*Test3"))
+    print(block_to_block_type("1. Test\n2. Test2"))
+    print(block_to_block_type("1. Test\n2. Test2\n4. Test3"))
 
-* This is a list
-* with items
-"""
-    print(block_text)
-    block_text_split = markdown_to_blocks(block_text)
-    print(block_text_split)
+
+
 
 
 
