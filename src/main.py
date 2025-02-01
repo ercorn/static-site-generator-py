@@ -5,13 +5,11 @@ from block_markdown import *
 import re
 import os
 import shutil
+from copystatic import copy_files_recursive
 
-def copy_to_dest(source, dest):
-    if not os.path.exists(source):
-        raise ValueError("Source path does not exist")
-    if not os.path.exists(dest):
-        raise ValueError("Destination path does not exist")
-    return "output"
+
+dir_path_static = "./static"
+dir_path_public = "./public"
 
 def main():
     #dummy_textnode = TextNode("This is a text node", "bold", "https://www.boot.dev")
@@ -87,7 +85,12 @@ def main():
     #print(block_to_block_type("* Test\n- Test2\n*Test3"))
     #print(block_to_block_type("1. Test\n2. Test2"))
     #print(block_to_block_type("1. Test\n2. Test2\n4. Test3"))
-    print(copy_to_dest(".", "src"))
+    print("Deleting public directory...")
+    if os.path.exists(dir_path_public):
+        shutil.rmtree(dir_path_public)
+
+    print("Copying static files to public directory...")
+    copy_files_recursive(dir_path_static, dir_path_public)
 
 
 
